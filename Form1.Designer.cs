@@ -36,13 +36,14 @@
             btnStop = new Button();
             btnReset = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
+            lblHr = new Label();
             SuspendLayout();
             // 
             // lblMin
             // 
             lblMin.AutoSize = true;
             lblMin.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMin.Location = new Point(99, 34);
+            lblMin.Location = new Point(161, 34);
             lblMin.Margin = new Padding(4, 0, 4, 0);
             lblMin.Name = "lblMin";
             lblMin.Size = new Size(90, 65);
@@ -53,7 +54,7 @@
             // 
             lblSc.AutoSize = true;
             lblSc.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSc.Location = new Point(181, 34);
+            lblSc.Location = new Point(245, 34);
             lblSc.Margin = new Padding(4, 0, 4, 0);
             lblSc.Name = "lblSc";
             lblSc.Size = new Size(90, 65);
@@ -63,11 +64,11 @@
             // lblCs
             // 
             lblCs.AutoSize = true;
-            lblCs.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCs.Location = new Point(259, 34);
+            lblCs.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCs.Location = new Point(332, 59);
             lblCs.Margin = new Padding(4, 0, 4, 0);
             lblCs.Name = "lblCs";
-            lblCs.Size = new Size(80, 65);
+            lblCs.Size = new Size(49, 40);
             lblCs.TabIndex = 2;
             lblCs.Text = "00";
             // 
@@ -110,12 +111,24 @@
             timer1.Interval = 10;
             timer1.Tick += timer1_Tick;
             // 
+            // lblHr
+            // 
+            lblHr.AutoSize = true;
+            lblHr.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHr.Location = new Point(77, 34);
+            lblHr.Margin = new Padding(4, 0, 4, 0);
+            lblHr.Name = "lblHr";
+            lblHr.Size = new Size(90, 65);
+            lblHr.TabIndex = 6;
+            lblHr.Text = "00:";
+            // 
             // StopWatch
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(545, 538);
+            Controls.Add(lblHr);
             Controls.Add(btnReset);
             Controls.Add(btnStop);
             Controls.Add(btnStart);
@@ -141,5 +154,6 @@
         private Button btnStop;
         private Button btnReset;
         private System.Windows.Forms.Timer timer1;
+        private Label lblHr;
     }
 }

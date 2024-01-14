@@ -2,7 +2,7 @@ namespace StopWatch
 {
     public partial class StopWatch : Form
     {
-        int timeMn, timeSc, timeCss;
+        int timeHr, timeMn, timeSc, timeCss;
         bool isActive;
         public StopWatch()
         {
@@ -28,6 +28,7 @@ namespace StopWatch
 
         private void ResetTimer()
         {
+            timeHr = 0;
             timeMn = 0;
             timeSc = 0;
             timeCss = 0;
@@ -51,6 +52,11 @@ namespace StopWatch
                     {
                         timeMn++;
                         timeSc = 0;
+                        if(timeMn >= 60)
+                        {
+                            timeHr++;
+                            timeMn = 0;
+                        }
                     }
                 }
             }
@@ -62,6 +68,7 @@ namespace StopWatch
             lblCs.Text = String.Format("{0:00}", timeCss);
             lblSc.Text = String.Format("{0:00}", timeSc);
             lblMin.Text = String.Format("{0:00}", timeMn);
+            lblHr.Text = String.Format("{0:00}", timeHr);
         }
     }
 }
